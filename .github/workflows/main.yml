@@ -1,0 +1,48 @@
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  deploy:
+    name: deploy to staging
+    runs-on: ubuntu-22.04
+    defaults:
+      run:
+        shell: bash
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: |
+        npm config set script-shell /bin/bash
+        npm install @tsparticles/engine@latest --force
+        npm ci
+      
+    - name: Build
+      run: npm run build
+      
+    - name: copy file via ssh key
+      uses: appleboy/scp-action@v0.1.7
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        port: ${{ secrets.PORT }}
+        key: ${{ secrets.KEY }}
+        source: "dist/**"
+        strip_components: 1
+        target: ${{ secrets.PATH }}
+        
+    - name: Reload NGINX
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.KEY }}
+        script: sudo systemctl reload nginx
