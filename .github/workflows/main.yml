@@ -21,8 +21,8 @@ jobs:
         
     - name: Install dependencies
       run: |
-        which sh
-        npm config set script-shell /bin/bash
+        npm install tsparticles@latest --force
+        npm install @tsparticles/engine@latest --force
         npm ci
       
     - name: Build
