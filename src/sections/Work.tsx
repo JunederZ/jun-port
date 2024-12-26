@@ -11,10 +11,10 @@ function WorkBox(props: {
         <div className="flex flex-col justify-center items-center border-transparent border-solid border-2 rounded-2xl p-4 z-[1] bg-gray-600 bg-opacity-20 hover:scale-105 transition-all duration-300 ">
             <div className='flex lg:flex-col justify-center items-center'>
                 <div className=''>
-                    <h1 className="text-[2dvh] lg:text-[2dvh] font-bold text-center p-4">
+                    <h1 className="text-[2dvh] lg:text-[3dvh] font-bold text-center p-4">
                         {props.title}
                     </h1>
-                    <h2 className="text-center text-gray-400 text-[1.4dvh] lg:text-[1.6dvh]">
+                    <h2 className="text-center text-gray-400 text-[1.4dvh] lg:text-[1.8dvh]">
                         {props.company}
                     </h2>
                 </div>
