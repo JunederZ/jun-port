@@ -7,6 +7,9 @@ jobs:
   deploy:
     name: deploy to staging
     runs-on: ubuntu-22.04
+    defaults:
+      run:
+        shell: bash
     steps:
     - uses: actions/checkout@v4
     
@@ -18,14 +21,13 @@ jobs:
         
     - name: Install dependencies
       run: |
-        npm cache clean --force
-        npm ci --verbose
+        which sh
+        npm config set script-shell /bin/bash
+        npm ci
       
     - name: Build
       run: npm run build
-      env:
-        CI: true 
-        
+      
     - name: copy file via ssh key
       uses: appleboy/scp-action@v0.1.7
       with:
