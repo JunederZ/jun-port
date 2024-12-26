@@ -8,6 +8,7 @@ jobs:
     name: deploy to staging
     runs-on: ubuntu-22.04
     steps:
+    - uses: actions/checkout@v4
     - name: Setup Node
       uses: actions/setup-node@v4
       with:
