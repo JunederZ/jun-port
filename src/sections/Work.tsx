@@ -18,7 +18,7 @@ function WorkBox(props: {
                         {props.company}
                     </h2>
                 </div>
-                <img src={props.img} alt="" className="w-auto h-[12vh] lg:h-[14dvh] p-1 lg:m-8 object-contain rounded-3xl overflow-hidden border-white border-2 bg-white" />
+                <img src={props.img} alt="" className="flex-shrink-0 aspect-square w-24 lg:w-32 h-auto lg:h-auto p-1 lg:m-8 object-fill rounded-3xl overflow-hidden bg-white" />
             </div>
             <button 
                     onClick={() => props.setOpenModalId(props.title)}

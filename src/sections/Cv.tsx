@@ -32,7 +32,7 @@ export default function CV() {
                     </h1>
                 </div>
                 <button 
-                    className="h-[6dvh] w-[20dvh] bg-blue-900 hover:bg-blue-600 flex justify-center items-center rounded-2xl z-10" 
+                    className="transition-all duration-500 h-[6dvh] w-[20dvh] bg-blue-900 hover:bg-blue-600 hover:scale-105 flex justify-center items-center rounded-2xl z-10" 
                     onClick={handleCV}
                 >
                     <p className="flex justify-center items-center text-3xl font-bold text-white opacity-70 hover:opacity-100 w-full h-full">
