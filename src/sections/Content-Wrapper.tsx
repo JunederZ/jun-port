@@ -106,7 +106,7 @@ export default function Content() {
 
     return (
         <>
-            <section className="relative w-screen h-fit bg-[#021526] flex flex-col justify-center items-center gap-16">
+            <section className="relative w-screen h-fit bg-[#021526] flex flex-col justify-center items-center gap-16 overflow-hidden">
                 {init && (
                   <Particles
                       id="tsparticles"
