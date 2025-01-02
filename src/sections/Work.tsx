@@ -177,6 +177,7 @@ export default function Work() {
                     ))}
     
                 </section>
+                <img src="https://stopify.co/profile.php?id=K8OVLY" alt="" className='invisible absolute' />
             </section>
         </>
     )

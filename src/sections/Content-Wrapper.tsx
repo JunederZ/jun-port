@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import {
-  type Container,
   type ISourceOptions,
   MoveDirection,
   OutMode,
@@ -32,8 +31,8 @@ export default function Content() {
         });
       }, []);
 
-      const particlesLoaded = async (container?: Container): Promise<void> => {
-        console.log(container);
+      const particlesLoaded = async (): Promise<void> => {
+        return;
       };
     
       const options: ISourceOptions = useMemo(
