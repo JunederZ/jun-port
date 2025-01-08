@@ -10,6 +10,8 @@ import { loadSlim } from '@tsparticles/slim';
 import Work from './Work';
 import AboutMe from './About-Me';
 import Cv from './Cv';
+import Skills from "./Skills";
+import Contact from "./Contact";
 
 
 
@@ -116,8 +118,10 @@ export default function Content() {
                 )}
                 <AboutMe />
                 <Work />
+                <Skills />
                 <Cv />
-                {/* <footer className="h-6 flex w-screen"></footer> */}
+                <Contact />
+                <footer className="h-6 flex w-screen"></footer>
             </section>
         </>
     )

@@ -27,7 +27,7 @@ export default function CV() {
         <>
             <div className='flex flex-col h-screen mt-8 justify-center items-center w-screen gap-8'>
                 <div className="flex items-center justify-center">
-                    <h1 className="flex font-bold text-[8dvw] md:text-[8dvh] text-gray-200 w-fit">
+                    <h1 className="flex font-semibold text-[8dvw] md:text-[8dvh] text-gray-200 w-fit">
                         Curriculum Vitae
                     </h1>
                 </div>

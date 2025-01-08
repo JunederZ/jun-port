@@ -28,6 +28,12 @@ export default {
           '0%': { opacity: '0.6' },
           '100%': { opacity: '0' },
         },
+        emailCopiedFade: {
+          '0%': { opacity: '0' },
+          '25%': { opacity: '1' },
+          '75%': { opacity: '1' },
+          '100%': { opacity: '0' },
+        },
       },
     },
   plugins: [],
