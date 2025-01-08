@@ -22,30 +22,6 @@ function typing() {
 }
 
 function App() {
-    const [vantaEffect, setVantaEffect] = useState(0);
-    const vantaRef = useRef(null);
-    useEffect(() => {
-        if (!vantaEffect) {
-            setVantaEffect(
-                NET({
-                    el: vantaRef.current,
-                    mouseControls: true,
-                    touchControls: true,
-                    gyroControls: false,
-                    minHeight: 200.00,
-                    minWidth: 200.00,
-                    scale: 1.00,
-                    scaleMobile: 1.00,
-                    color: 0x808080,
-                    backgroundColor: 0x0,
-                    points: 20.00,
-                    maxDistance: 15.00,
-                    spacing: 20.00,
-                    
-                })
-            );
-        }
-    }, [vantaEffect]);
 
     return (
         <>
@@ -61,7 +37,7 @@ function App() {
 
             {/* Vanta container with gradient overlay */}
             <div className="absolute left-0 w-screen h-screen -z-30 overflow-hidden">
-                <div ref={vantaRef} className="absolute w-screen h-full bg-black">
+                <div className="absolute w-screen h-full bg-black">
                     <div className="md:invisible absolute inset-0 opacity-60 bg-black pointer-events-none" />
                     <div className="invisible md:visible absolute inset-0 opacity-100 bg-gradient-to-l from-transparent via-transparent to-black to-70% pointer-events-none" />
                     <div className="invisible md:visible absolute inset-0 opacity-100 bg-gradient-to-b from-transparent via-transparent to-black to-100% pointer-events-none" />
