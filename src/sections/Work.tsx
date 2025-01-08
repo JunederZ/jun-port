@@ -128,7 +128,7 @@ export default function Work() {
             description: [
                 "Oversaw the technical strategy and implementation of a web platform connecting students with qualified tutors.",
                 "On boarded over 50 tutors to the platform, providing support to ensure high-quality instruction for students.",
-                "Developed the back-end API services using Go programming language and PostgreSQL database.",
+                "Developed the back-end API services using Python and the Django framework.",
                 "Built the front-end web application using React.js, implementing a modern, responsive UI and seamless user experiences."
             ],
             image: Gakko,
