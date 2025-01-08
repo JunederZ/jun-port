@@ -40,29 +40,8 @@ export default function Content() {
     
       const options: ISourceOptions = useMemo(
         () => ({
-          fpsLimit: 60,
+          fpsLimit: 30,
           fullScreen: false,
-          interactivity: {
-            events: {
-              onClick: {
-                enable: false,
-                mode: "push",
-              },
-              onHover: {
-                enable: true,
-                mode: "repulse",
-              },
-            },
-            modes: {
-              push: {
-                quantity: 1,
-              },
-              repulse: {
-                distance: 200,
-                duration: 0.4,
-              },
-            },
-          },
           particles: {
             color: {
               value: "#ffffff",
@@ -88,73 +67,7 @@ export default function Content() {
               density: {
                 enable: true,
               },
-              value: 80,
-            },
-            opacity: {
-              value: 0.2,
-            },
-            shape: {
-              type: "circle",
-            },
-            size: {
-              value: { min: 1, max: 5 },
-            },
-          },
-        }),
-        [],
-      );
-
-      const optionsTop: ISourceOptions = useMemo(
-        () => ({
-          fpsLimit: 60,
-          fullScreen: false,
-          interactivity: {
-            events: {
-              onClick: {
-                enable: false,
-                mode: "push",
-              },
-              onHover: {
-                enable: true,
-                mode: "repulse",
-              },
-            },
-            modes: {
-              push: {
-                quantity: 1,
-              },
-              repulse: {
-                distance: 200,
-                duration: 0.4,
-              },
-            },
-          },
-          particles: {
-            color: {
-              value: "#ffffff",
-            },
-            links: {
-              color: "#ffffff",
-              distance: 150,
-              enable: true,
-              opacity: 0.4,
-              width: 1,
-            },
-            move: {
-              direction: MoveDirection.none,
-              enable: true,
-              outModes: {
-                default: OutMode.out,
-              },
-              random: false,
-              speed: 4,
-              straight: false,
-            },
-            number: {
-              density: {
-                enable: true,
-              },
-              value: 80,
+              value: 40,
             },
             opacity: {
               value: 0.2,
@@ -178,7 +91,7 @@ export default function Content() {
               <Particles
               id="tsparticles-top"
               particlesLoaded={particlesLoaded}
-              options={optionsTop}
+              options={options}
               className="absolute flex inset-0 h-full w-screen pointer-events-none -z-10"
               />
             )}

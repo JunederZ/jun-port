@@ -40,11 +40,11 @@ export default function Skills() {
     return (
         <>
             <section className="flex flex-col gap-8 justify-center items-center w-screen h-fit text-white">
-                <div className="flex font-semibold text-[8dvw] md:text-[8dvh] text-white w-fit">
+                <div className="flex font-semibold text-[8dvw] md:text-[8vh] text-white w-fit">
                     <h1>Skills</h1>
                 </div>
                 <div className='flex flex-col justify-center items-center gap-8'>
-                    <h2 className='text-[2dvh] lg:text-[3dvh] font-normal text-center p-4'>Programming Languages & Frameworks</h2>
+                    <h2 className='text-[2vh] lg:text-[3vh] font-normal text-center p-4'>Programming Languages & Frameworks</h2>
                     <ul className="flex flex-wrap gap-4 justify-center items-center">
                         {[
                             { skill: 'Python', img: Python },
@@ -69,7 +69,7 @@ export default function Skills() {
                     </ul>
                 </div>
                 <div className='flex flex-col justify-center items-center gap-8'>
-                    <h2 className='text-[2dvh] lg:text-[3dvh] font-normal text-center p-4'>Databases</h2>
+                    <h2 className='text-[2vh] lg:text-[3vh] font-normal text-center p-4'>Databases</h2>
                     <ul className="flex flex-wrap gap-4 justify-center items-center">
                         {[
                             { skill: 'PostgreSQL', img: PostgreSQL },
@@ -84,7 +84,7 @@ export default function Skills() {
                     </ul>
                 </div>
                 <div className='flex flex-col justify-center items-center gap-8'>
-                    <h2 className='text-[2dvh] lg:text-[3dvh] font-normal text-center p-4'>Tools</h2>
+                    <h2 className='text-[2vh] lg:text-[3vh] font-normal text-center p-4'>Tools</h2>
                     <ul className="flex flex-wrap gap-4 justify-center items-center">
                         {[
                             { skill: 'Git', img: Git },

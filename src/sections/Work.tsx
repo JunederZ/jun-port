@@ -11,10 +11,10 @@ function WorkBox(props: {
         <div className="flex flex-col justify-center items-center border-transparent border-solid border-2 rounded-2xl p-4 z-[1] bg-gray-600 bg-opacity-20 hover:scale-105 transition-all duration-300 ">
             <div className='flex lg:flex-col justify-center items-center'>
                 <div className=''>
-                    <h1 className="text-[2dvh] lg:text-[3dvh] font-normal text-center p-4">
+                    <h1 className="text-[2vh] lg:text-[3vh] font-normal text-center p-4">
                         {props.title}
                     </h1>
-                    <h2 className="text-center text-gray-400 text-[1.4dvh] lg:text-[1.8dvh]">
+                    <h2 className="text-center text-gray-400 text-[1.4vh] lg:text-[1.8vh]">
                         {props.company}
                     </h2>
                 </div>
@@ -22,7 +22,7 @@ function WorkBox(props: {
             </div>
             <button 
                     onClick={() => props.setOpenModalId(props.title)}
-                    className="flex lg:text-[2dvh] bg-slate-600 w-[32dvw] md:w-[12dvw] justify-center mt-4 lg:mt-0 py-2 rounded-2xl text-gray-200 hover:text-gray-50 transition-all duration-300 hover:bg-slate-800 hover:scale-105"
+                    className="flex lg:text-[2vh] bg-slate-600 w-[32dvw] md:w-[12dvw] justify-center mt-4 lg:mt-0 py-2 rounded-2xl text-gray-200 hover:text-gray-50 transition-all duration-300 hover:bg-slate-800 hover:scale-105"
                 >
                     More Info
             </button>
@@ -154,7 +154,7 @@ export default function Work() {
         <>
             <section className='m-12 flex flex-col justify-center items-center'>
                 <div className="flex items-center justify-center z-10 m-6">
-                    <h1 className="flex font-semibold text-[8dvw] md:text-[8dvh] text-white w-fit">Experiences</h1>
+                    <h1 className="flex font-semibold text-[8dvw] md:text-[8vh] text-white w-fit">Experiences</h1>
                 </div>
                 <section className="grid md:grid-cols-3 w-[70dvw] h-full text-white gap-16 z-10">
     
