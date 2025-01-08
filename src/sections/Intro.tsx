@@ -1,7 +1,5 @@
-import { useEffect, useRef, useState } from "react";
 import meBW from "../assets/me-bw.jpg"
 import { TypeAnimation } from "react-type-animation";
-import NET from "vanta/dist/vanta.net.min";
 
 function typing() {
     return (
