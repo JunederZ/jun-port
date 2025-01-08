@@ -9,6 +9,18 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  "browserslist": {
+                "production": [
+                        "> 5%",
+                        "not dead",
+                        "not op_mini all"
+                ],
+                "development": [
+                        "> 5%",
+                        "not dead",
+                        "not op_mini all"
+                ]
+        },
   "dependencies": {
     "@tsparticles/engine": "^3.7.1",
     "@tsparticles/react": "^3.0.0",

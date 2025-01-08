@@ -45,7 +45,7 @@ export default function Skills() {
                 </div>
                 <div className='flex flex-col justify-center items-center gap-8'>
                     <h2 className='text-[2vh] lg:text-[3vh] font-normal text-center p-4'>Programming Languages & Frameworks</h2>
-                    <ul className="flex flex-wrap gap-4 justify-center items-center">
+                    <ul className="flex flex-wrap gap-4 justify-center items-center px-16">
                         {[
                             { skill: 'Python', img: Python },
                             { skill: 'C++', img: Cpp },
@@ -70,7 +70,7 @@ export default function Skills() {
                 </div>
                 <div className='flex flex-col justify-center items-center gap-8'>
                     <h2 className='text-[2vh] lg:text-[3vh] font-normal text-center p-4'>Databases</h2>
-                    <ul className="flex flex-wrap gap-4 justify-center items-center">
+                    <ul className="flex flex-wrap gap-4 justify-center items-center px-16">
                         {[
                             { skill: 'PostgreSQL', img: PostgreSQL },
                             { skill: 'MySQL', img: MySQL },
@@ -84,8 +84,8 @@ export default function Skills() {
                     </ul>
                 </div>
                 <div className='flex flex-col justify-center items-center gap-8'>
-                    <h2 className='text-[2vh] lg:text-[3vh] font-normal text-center p-4'>Tools</h2>
-                    <ul className="flex flex-wrap gap-4 justify-center items-center">
+                    <h2 className='text-[2vh] lg:text-[3vh] font-normal text-center p-4'>DevOps & Version Control</h2>
+                    <ul className="flex flex-wrap gap-4 justify-center items-center px-16">
                         {[
                             { skill: 'Git', img: Git },
                             { skill: 'Nginx', img: Nginx },

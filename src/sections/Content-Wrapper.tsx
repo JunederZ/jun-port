@@ -40,7 +40,7 @@ export default function Content() {
     
       const options: ISourceOptions = useMemo(
         () => ({
-          fpsLimit: 30,
+          fpsLimit: 20,
           fullScreen: false,
           particles: {
             color: {
@@ -60,7 +60,7 @@ export default function Content() {
                 default: OutMode.out,
               },
               random: false,
-              speed: 4,
+              speed: 0.6,
               straight: false,
             },
             number: {
