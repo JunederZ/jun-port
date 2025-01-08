@@ -12,6 +12,7 @@ import AboutMe from './About-Me';
 import Cv from './Cv';
 import Skills from "./Skills";
 import Contact from "./Contact";
+import App from "./Intro";
 
 
 
@@ -103,19 +104,94 @@ export default function Content() {
         [],
       );
 
+      const optionsTop: ISourceOptions = useMemo(
+        () => ({
+          fpsLimit: 60,
+          fullScreen: false,
+          interactivity: {
+            events: {
+              onClick: {
+                enable: false,
+                mode: "push",
+              },
+              onHover: {
+                enable: true,
+                mode: "repulse",
+              },
+            },
+            modes: {
+              push: {
+                quantity: 1,
+              },
+              repulse: {
+                distance: 200,
+                duration: 0.4,
+              },
+            },
+          },
+          particles: {
+            color: {
+              value: "#ffffff",
+            },
+            links: {
+              color: "#ffffff",
+              distance: 150,
+              enable: true,
+              opacity: 0.4,
+              width: 1,
+            },
+            move: {
+              direction: MoveDirection.none,
+              enable: true,
+              outModes: {
+                default: OutMode.out,
+              },
+              random: false,
+              speed: 4,
+              straight: false,
+            },
+            number: {
+              density: {
+                enable: true,
+              },
+              value: 80,
+            },
+            opacity: {
+              value: 0.2,
+            },
+            shape: {
+              type: "circle",
+            },
+            size: {
+              value: { min: 1, max: 5 },
+            },
+          },
+        }),
+        [],
+      );
 
 
     return (
         <>
+            <App />
+            {init && (
+              <Particles
+              id="tsparticles-top"
+              particlesLoaded={particlesLoaded}
+              options={optionsTop}
+              className="absolute flex inset-0 h-full w-screen pointer-events-none -z-10"
+              />
+            )}
+            <div className="invisible md:visible absolute inset-0 bg-gradient-to-r from-black from-30% to-transparent to-100% pointer-events-none -z-10" />
             <section className="relative w-screen h-fit bg-[#021526] flex flex-col justify-center items-center gap-16 overflow-hidden">
                 {init && (
-                  <Particles
-                      id="tsparticles"
-                      particlesLoaded={particlesLoaded}
-                      options={options}
-                      className="absolute flex inset-0 h-full w-screen pointer-events-none"
-                  />
-                )}
+                    <Particles
+                        id="tsparticles"
+                        particlesLoaded={particlesLoaded}
+                        options={options}
+                        className="absolute flex inset-0 h-full w-screen pointer-events-none"
+                    />
+                  )}
                 <AboutMe />
                 <Work />
                 <Skills />
