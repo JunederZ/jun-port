@@ -40,7 +40,7 @@ export default function Skills() {
     return (
         <>
             <section className="flex flex-col gap-8 justify-center items-center w-screen h-fit text-white">
-                <div className="flex font-semibold text-[8dvw] md:text-[8vh] text-white w-fit">
+                <div className="flex font-semibold text-[8vw] md:text-[8vh] text-white w-fit">
                     <h1>Skills</h1>
                 </div>
                 <div className='flex flex-col justify-center items-center gap-8'>

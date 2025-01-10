@@ -26,7 +26,7 @@ function BoxWrapper(props: {
             <div className="mt-auto pt-4 flex justify-center"> 
                 <button 
                     onClick={() => props.setOpenModalId(props.title)}
-                    className="flex lg:text-[2vh] bg-slate-600 w-[32dvw] md:w-[12dvw] justify-center py-2 rounded-2xl text-gray-200 hover:text-gray-50 transition-all duration-300 hover:bg-slate-800 hover:scale-105"
+                    className="flex lg:text-[2vh] bg-slate-600 w-[32vw] md:w-[12vw] justify-center py-2 rounded-2xl text-gray-200 hover:text-gray-50 transition-all duration-300 hover:bg-slate-800 hover:scale-105"
                 >
                     More Info
                 </button>
@@ -220,9 +220,9 @@ export default function Work() {
         <>
             <section className='m-12 flex flex-col justify-center items-center z-10'>
                 <div className="flex items-center justify-center z-0 m-6">
-                    <h1 className="flex font-semibold text-[8dvw] md:text-[8vh] text-white w-fit">Experiences</h1>
+                    <h1 className="flex font-semibold text-[8vw] md:text-[8vh] text-white w-fit">Experiences</h1>
                 </div>
-                <section className="grid lg:grid-cols-4 w-[70dvw] h-full text-white gap-16">
+                <section className="grid lg:grid-cols-4 w-[70vw] h-full text-white gap-16">
     
                     {experienceContents.map((content) => (
                         <React.Fragment key={content.id}>
@@ -244,9 +244,9 @@ export default function Work() {
 
                 </section>
                 <div className="flex items-center justify-center z-0 m-6">
-                    <h1 className="flex font-semibold text-[8dvw] md:text-[8vh] text-white w-fit">Projects</h1>
+                    <h1 className="flex font-semibold text-[8vw] md:text-[8vh] text-white w-fit">Projects</h1>
                 </div>
-                <section className="grid lg:grid-cols-4 w-[70dvw] h-full text-white gap-16">
+                <section className="grid lg:grid-cols-4 w-[70vw] h-full text-white gap-16">
     
                     {projectContents.map((content) => (
                         <React.Fragment key={content.id}>

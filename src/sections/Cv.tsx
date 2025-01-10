@@ -27,7 +27,7 @@ export default function CV() {
         <>
             <div className='flex flex-col h-screen mt-8 justify-center items-center w-screen gap-8'>
                 <div className="flex items-center justify-center">
-                    <h1 className="flex font-semibold text-[8dvw] md:text-[8vh] text-gray-200 w-fit">
+                    <h1 className="flex font-semibold text-[8vw] md:text-[8vh] text-gray-200 w-fit">
                         Curriculum Vitae
                     </h1>
                 </div>
@@ -47,7 +47,7 @@ export default function CV() {
                         <object 
                             data={Resume} 
                             type="application/pdf" 
-                            className="w-[90dvw] lg:w-[50dvw] h-[70vh]"
+                            className="w-[90vw] lg:w-[50vw] h-[70vh]"
                         />
                     </div>
                 )}

@@ -35,7 +35,7 @@ export default function Contact() {
     return (
         <>
             <div className='flex flex-col gap-8 justify-center items-center w-screen h-fit text-white'>
-                <h1 className='flex font-semibold text-[8dvw] md:text-[8vh] text-white w-fit'>Get in Touch</h1>
+                <h1 className='flex font-semibold text-[8vw] md:text-[8vh] text-white w-fit'>Get in Touch</h1>
                 <div className='flex flex-col justify-center items-center gap-8'>
                     <button 
                         onClick={copyToClipboard}
