@@ -96,7 +96,7 @@ export default function Content() {
               />
             )}
             <div className="invisible md:visible absolute inset-0 bg-gradient-to-r from-black from-30% to-transparent to-100% pointer-events-none -z-10" />
-            <section className="relative w-screen h-fit bg-[#021526] flex flex-col justify-center items-center gap-16 overflow-hidden">
+            <section className="relative w-screen h-fit bg-[#021526] flex flex-col justify-center items-center gap-16 overflow-hidden z-[1]">
                 {init && (
                     <Particles
                         id="tsparticles"

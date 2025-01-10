@@ -36,7 +36,7 @@ function App() {
             <div className="absolute left-0 w-screen h-screen -z-10 overflow-hidden bg-black"></div>
 
             <div className="flex z-0 justify-center lg:justify-end items-center h-screen lg:pr-0 text-left gap-8">
-                <div className="z-10 flex flex-col justify-center items-start w-full px-10 md:w-1/2 text-white text-[2.6vh] md:text-5xl font-bold">
+                <div className="z-0 flex flex-col justify-center items-start w-full px-10 md:w-1/2 text-white text-[2.6vh] md:text-5xl font-bold">
                     <h1>Hi, Ned here.</h1>
                     <h1>I'm a <span className="text-blue-600">{typing()}</span></h1>
                 </div>

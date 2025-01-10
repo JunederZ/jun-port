@@ -3,34 +3,39 @@ import Angkit from "../assets/angkit.png"
 import Teacher from "../assets/teacher1.png"
 import Gakko from "../assets/gakko.jpeg"
 import UNJ from "../assets/unj.png"
+import OJS from "../assets/ojs.png"
+import Nasa from "../assets/nasa.jpg"
+import Ampas from "../assets/ampas.png"
 
-function WorkBox(props: {
+function BoxWrapper(props: {
     company: any; title: any; img: any; setOpenModalId: Function 
 }) {
     return (
-        <div className="flex flex-col justify-center items-center border-transparent border-solid border-2 rounded-2xl p-4 z-[1] bg-gray-600 bg-opacity-20 hover:scale-105 transition-all duration-300 ">
-            <div className='flex lg:flex-col justify-center items-center'>
-                <div className=''>
-                    <h1 className="text-[2vh] lg:text-[3vh] font-normal text-center p-4">
+        <div className="flex flex-col justify-between h-full border-transparent border-solid border-2 rounded-2xl py-2 z-0 bg-gray-600 bg-opacity-20 hover:scale-105 transition-all duration-300">
+            <div className='flex lg:flex-col justify-center lg:justify-between items-center h-full'>
+                <div className='w-[70%] flex flex-col'>
+                    <h1 className="text-[1.5vh] lg:text-[2vh] font-normal text-center py-2">
                         {props.title}
                     </h1>
-                    <h2 className="text-center text-gray-400 text-[1.4vh] lg:text-[1.8vh]">
+                    <h2 className="text-center text-gray-400 text-[2.2vw] lg:text-[1.3vh] px-4">
                         {props.company}
                     </h2>
                 </div>
-                <img src={props.img} alt="" className="flex-shrink-0 aspect-square w-24 lg:w-32 h-auto lg:h-auto p-1 lg:m-8 object-contain rounded-3xl overflow-hidden bg-white" />
+                <img src={props.img} alt="" className="flex-shrink-0 aspect-square w-20 lg:w-24 h-auto lg:h-auto p-1 lg:m-4 object-contain rounded-3xl overflow-hidden bg-white" />
             </div>
-            <button 
+            <div className="mt-auto pt-4 flex justify-center"> 
+                <button 
                     onClick={() => props.setOpenModalId(props.title)}
-                    className="flex lg:text-[2vh] bg-slate-600 w-[32dvw] md:w-[12dvw] justify-center mt-4 lg:mt-0 py-2 rounded-2xl text-gray-200 hover:text-gray-50 transition-all duration-300 hover:bg-slate-800 hover:scale-105"
+                    className="flex lg:text-[2vh] bg-slate-600 w-[32dvw] md:w-[12dvw] justify-center py-2 rounded-2xl text-gray-200 hover:text-gray-50 transition-all duration-300 hover:bg-slate-800 hover:scale-105"
                 >
                     More Info
-            </button>
+                </button>
+            </div>
         </div>
     )
 }
 
-function WorkModal({ content, onClose }: { content: ModalContent, onClose: () => void }) {
+function ModalWrapper({ content, onClose }: { content: ModalContent, onClose: () => void }) {
     const [isClosing, setIsClosing] = useState(false);
 
     const handleClose = () => {
@@ -42,7 +47,7 @@ function WorkModal({ content, onClose }: { content: ModalContent, onClose: () =>
 
     return (
         <>
-            <div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto outline-none focus:outline-none pointer-events-none">
+            <div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto outline-none focus:outline-none">
                 <div className={`relative w-[95%] md:w-auto max-w-3xl mx-auto my-6 ${isClosing ? 'animate-[modalFadeOut_0.3s_ease-out]' : 'animate-[modalFadeIn_0.3s_ease-out]'}`}>
                     <div className={`relative flex flex-col w-full bg-gray-700 border-0 rounded-lg shadow-lg outline-none focus:outline-none ${isClosing ? 'animate-[modalSlideOut_0.3s_ease-out]' : 'animate-[modalSlideIn_0.3s_ease-out]'}`}>
                         {/* Modal Header - Made sticky */}
@@ -50,8 +55,18 @@ function WorkModal({ content, onClose }: { content: ModalContent, onClose: () =>
                             <div className='flex flex-col pr-8'> {/* Added right padding to prevent text overlap with close button */}
                                 <h3 className="text-xl md:text-3xl font-semibold break-words">{content.title}</h3>
                                 <p className="text-sm md:text-base">
-                                    <span className='text-gray-300'>{content.start}</span> - <span className='text-gray-300'>{content.end}</span>
+                                    {  
+                                    content.end === "none" ? 
+                                        <span className='text-gray-300'>{content.start}</span> : 
+                                        <span className='text-gray-300'>{content.start} <span className='text-white'>-</span> {content.end}</span>
+                                    }
                                 </p>
+                                {content.link && (
+                                    <a href={content.link
+                                    } target="_blank" rel="noreferrer" className="text-xs md:text-sm text-blue-500 underline">
+                                        {content.link}
+                                    </a>
+                                )}
                             </div>
                             
                             <button
@@ -86,8 +101,10 @@ function WorkModal({ content, onClose }: { content: ModalContent, onClose: () =>
 type ModalContent = {
     id: string;
     title: string;
+    place: string;
     description: string[];
     image: string;
+    link?: string;
     start: string;
     end: string;
 };
@@ -96,10 +113,11 @@ export default function Work() {
 
     const [openModalId, setOpenModalId] = useState<string | null>(null);
 
-    const modalContents: ModalContent[] = [
+    const experienceContents: ModalContent[] = [
         {
             id: "Backend Developer",
             title: "Backend Developer at Angkit Agro Technology",
+            place: "Angkit Agro Technology",
             description: [
                 "Designed and implemented a barcode generation and scanning system for livestock monitoring and tracking.",
                 "Developed and maintained 10+ RESTful APIs using Flask (Python).",
@@ -111,8 +129,35 @@ export default function Work() {
             end: "February 2024"
         },
         {
+            id: "Academic Assistant",
+            title: "Academic Assistant at Department of Computer Science, UNJ",
+            place: "Department of Computer Science, UNJ",
+            description: [
+                "Delivered 10 targeted learning sessions for 20+ freshman students in D language and algorithmic fundamentals.",
+                "Created training materials to improve students' programming and problem-solving skills.",
+                "Provided personalized support to students in a collaborative learning environment."
+            ],
+            image: UNJ,
+            start: "October 2024",
+            end: "Desember 2024"
+        },
+        {
+            id: "OJS Maintainer",
+            title: "OJS Maintainer at Chemistry Department, UNJ",
+            place: "Chemistry Department, UNJ",
+            description: [
+                "Redesigned and maintained OJS platform interface, improving overall system performance and user experience.",
+                "Implemented security enhancements and regular maintenance to ensure platform stability and data protection.",
+                "Managed domain configuration and technical support, maintaining consistent website accessibility."
+            ],
+            image: OJS,
+            start: "October 2024",
+            end: "Desember 2024"
+        },
+        {
             id: "Private Teacher",
             title: "Private Teacher",
+            place: "Freelance",
             description: [
                 "Conducted 50+ one-on-one instructional sessions on fundamental Python syntax and Scratch.",
                 "Covered 100+ coding problems and exercises across both Python and Scratch to build student programming proficiency.",
@@ -125,6 +170,7 @@ export default function Work() {
         {
             id: "Full-stack Developer",
             title: "Full-stack Developer at Gakko Eduplatform",
+            place: "Gakko Eduplatform",
             description: [
                 "Oversaw the technical strategy and implementation of a web platform connecting students with qualified tutors.",
                 "On boarded over 50 tutors to the platform, providing support to ensure high-quality instruction for students.",
@@ -134,48 +180,91 @@ export default function Work() {
             image: Gakko,
             start: "August 2023",
             end: "Present"
-        },
-        {
-            id: "Academic Assistant",
-            title: "Academic Assistant at Department of Computer Science, UNJ",
-            description: [
-                "Delivered 10 targeted learning sessions for 20+ freshman students in D language and algorithmic fundamentals.",
-                "Created training materials to improve students' programming and problem-solving skills.",
-                "Provided personalized support to students in a collaborative learning environment."
-            ],
-            image: UNJ,
-            start: "October 2024",
-            end: "Present"
         }
     ];
 
+    const projectContents: ModalContent[] = [
+        {
+            id: "NASA Space Apps Challenge 2024",
+            title: "NASA Space Apps Challenge 2024 - Beyond Us",
+            place: "Beyond Us",
+            description: [
+                "Awarded \"Best Space Project\" for the NASA Space Apps Challenge in 2024.",
+                "Developed a web app with 3D interactive exoplanet display and immersive walk-on simulator using Vite, JS, Three.js, HTML, and CSS.",
+                "Collaborated effectively with a multidisciplinary team on full software development lifecycle.",
+                "Demonstrated strong problem-solving and adaptability in a fast-paced, innovative environment."
+            ],
+            image: Nasa,
+            link: "https://beyond-us.pages.dev/",
+            start: "October 2024",
+            end: "none"
+        },
+        {
+            id: "Minecraft Server",
+            title: "Minecraft Server Deployment and Maintainer",
+            place: "Indonesia",
+            description: [
+                "Established and maintained a Minecraft server infrastructure, ensuring 99.9% uptime for over 700 active players.",
+                "Developed and implemented 15+ custom features and plugins to enhance the user experience, including an interactive in-game economy, player ranking system, and automated moderation tools.",
+                "Configured and managed the server's proxy and VPS hosting environment.",
+                "Optimizing performance and security for better user experience.",
+                "Creating a fully automatic web-based top up for in game currency."
+            ],
+            image: Ampas,
+            start: "VPS, Proxy and Top-up System",
+            end: "none"
+        }
+    ];
 
     return (
         <>
-            <section className='m-12 flex flex-col justify-center items-center'>
-                <div className="flex items-center justify-center z-10 m-6">
+            <section className='m-12 flex flex-col justify-center items-center z-10'>
+                <div className="flex items-center justify-center z-0 m-6">
                     <h1 className="flex font-semibold text-[8dvw] md:text-[8vh] text-white w-fit">Experiences</h1>
                 </div>
-                <section className="grid md:grid-cols-3 w-[70dvw] h-full text-white gap-16 z-10">
+                <section className="grid lg:grid-cols-4 w-[70dvw] h-full text-white gap-16">
     
-                    {modalContents.map((content) => (
+                    {experienceContents.map((content) => (
                         <React.Fragment key={content.id}>
-                            <WorkBox 
+                            <BoxWrapper 
                                 title={content.id} 
-                                company={content.title.split(' at ')[1] || ''} 
+                                company={content.place} 
                                 img={content.image} 
                                 setOpenModalId={setOpenModalId}
                             />
                             
                             {openModalId === content.id && (
-                                <WorkModal 
+                                <ModalWrapper 
                                     content={content} 
                                     onClose={() => setOpenModalId(null)} 
                                 />
                             )}
                         </React.Fragment>
                     ))}
+
+                </section>
+                <div className="flex items-center justify-center z-0 m-6">
+                    <h1 className="flex font-semibold text-[8dvw] md:text-[8vh] text-white w-fit">Projects</h1>
+                </div>
+                <section className="grid lg:grid-cols-4 w-[70dvw] h-full text-white gap-16">
     
+                    {projectContents.map((content) => (
+                        <React.Fragment key={content.id}>
+                            <BoxWrapper 
+                                title={content.id} 
+                                company={content.place} 
+                                img={content.image} 
+                                setOpenModalId={setOpenModalId}
+                            />
+                            
+                            {openModalId === content.id && (
+                                <ModalWrapper 
+                                    content={content} 
+                                    onClose={() => setOpenModalId(null)} 
+                                />
+                            )}
+                        </React.Fragment>
+                    ))}
                 </section>
             </section>
         </>
