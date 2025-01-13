@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import Github from '../assets/skills/github-circle.svg'
-import Instagram from '../assets/skills/instagram.svg'
-import LinkedIn from '../assets/skills/linkedin.svg'
-import Mail from '../assets/skills/mail.svg'
+import Github from '../assets/github-circle.svg'
+import Instagram from '../assets/instagram.svg'
+import LinkedIn from '../assets/linkedin.svg'
+import Mail from '../assets/mail.svg'
+import Discord from '../assets/discord.svg'
 
 
 function ContactContent(props: { skill: string; img?: any, link?: string }) {
@@ -61,6 +62,7 @@ export default function Contact() {
                             { skill: 'Github', img: Github, link: "https://github.com/JunederZ" },
                             { skill: 'Instagram', img: Instagram, link: "https://www.instagram.com/arjunedimas/" },
                             { skill: 'LinkedIn', img: LinkedIn, link: "https://www.linkedin.com/in/arjunadimas/" },
+                            { skill: 'Discord', img: Discord, link: "https://discord.com/users/250515384073977866" },
                         ].map((skill, index) => (
                             <li key={index}>
                                 <ContactContent skill={skill.skill} img={skill.img} link={skill.link} />
