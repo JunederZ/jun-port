@@ -10,7 +10,7 @@ import Toffee from "../assets/toffee.webp"
 import Nedmed from "../assets/nedmed.png"
 
 function BoxWrapper(props: {
-    company: any; title: any; img: any; setOpenModalId: Function 
+    company: any; title: any; img: any; setOpenModalId: Function
 }) {
     return (
         <div className="flex flex-col justify-between h-full border-transparent border-solid border-2 rounded-2xl py-2 z-0 bg-gray-600 bg-opacity-20 hover:scale-105 transition-all duration-300">
@@ -25,8 +25,8 @@ function BoxWrapper(props: {
                 </div>
                 <img src={props.img} alt="" className="flex-shrink-0 aspect-square w-20 lg:w-24 h-auto lg:h-auto p-1 lg:m-4 object-contain rounded-3xl overflow-hidden bg-white" />
             </div>
-            <div className="mt-auto pt-4 flex justify-center"> 
-                <button 
+            <div className="mt-auto pt-4 flex justify-center">
+                <button
                     onClick={() => props.setOpenModalId(props.title)}
                     className="flex lg:text-[2vh] bg-slate-600 w-[32vw] md:w-[12vw] justify-center py-2 rounded-2xl text-gray-200 hover:text-gray-50 transition-all duration-300 hover:bg-slate-800 hover:scale-105"
                 >
@@ -57,10 +57,10 @@ function ModalWrapper({ content, onClose }: { content: ModalContent, onClose: ()
                             <div className='flex flex-col pr-8'> {/* Added right padding to prevent text overlap with close button */}
                                 <h3 className="text-xl md:text-3xl font-semibold break-words">{content.title}</h3>
                                 <p className="text-sm md:text-base">
-                                    {  
-                                    content.end === "none" ? 
-                                        <span className='text-gray-300'>{content.start}</span> : 
-                                        <span className='text-gray-300'>{content.start} <span className='text-white'>-</span> {content.end}</span>
+                                    {
+                                        content.end === "none" ?
+                                            <span className='text-gray-300'>{content.start}</span> :
+                                            <span className='text-gray-300'>{content.start} <span className='text-white'>-</span> {content.end}</span>
                                     }
                                 </p>
                                 {content.link && (
@@ -70,17 +70,17 @@ function ModalWrapper({ content, onClose }: { content: ModalContent, onClose: ()
                                     </a>
                                 )}
                             </div>
-                            
+
                             <button
                                 className="absolute right-2 top-2 p-1 ml-auto text-3xl font-semibold leading-none text-white bg-transparent border-0 outline-none opacity-100 focus:outline-none"
                                 onClick={handleClose}
                             >
                                 <svg className="w-8 h-8 hover:bg-gray-500 p-2 rounded-lg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                                    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
                                 </svg>
                             </button>
                         </div>
-                        
+
                         {/* Modal Body */}
                         <div className="relative flex-auto px-4 md:px-20 py-10">
                             {content.description.map((desc, index) => (
@@ -92,7 +92,7 @@ function ModalWrapper({ content, onClose }: { content: ModalContent, onClose: ()
                     </div>
                 </div>
             </div>
-            <div 
+            <div
                 className={`fixed inset-0 z-40 bg-black ${isClosing ? 'animate-[backdropFadeOut_0.3s_ease-out]' : 'animate-[backdropFadeIn_0.3s_ease-out]'} opacity-60`}
                 onClick={handleClose}
             ></div>
@@ -117,44 +117,31 @@ export default function Work() {
 
     const experienceContents: ModalContent[] = [
         {
-            id: "Backend Developer",
-            title: "Backend Developer at Angkit Agro Technology",
-            place: "Angkit Agro Technology",
+            id: "Website Developer",
+            title: "Website Developer at PT Toffee International (ToffeeDev)",
+            place: "PT Toffee International (ToffeeDev)",
             description: [
-                "Designed and implemented a barcode generation and scanning system for livestock monitoring and tracking.",
-                "Developed and maintained 10+ RESTful APIs using Flask (Python).",
-                "Implemented data encryption protocols and security measures for sensitive livestock data.",
-                "Configured and optimized cloud infrastructure and Nginx servers for Flask deployment, achieving 99.9% uptime."
+                "Engineered a 30+ page dashboard for 7 company divisions to improve data access",
+                "Managed and resolved technical issues for 20+ client websites, ensuring high performance",
+                "Executed technical SEO strategies to improve client search engine rankings",
+                "Developed and launched new website features, enhancing functionality and user engagement"
             ],
-            image: Angkit,
-            start: "October 2023",
-            end: "February 2024"
+            image: Toffee,
+            start: "February 2025",
+            end: "Present"
         },
         {
-            id: "Academic Assistant",
-            title: "Academic Assistant at Department of Computer Science, UNJ",
-            place: "Department of Computer Science, UNJ",
+            id: "Private Teacher",
+            title: "Private Teacher",
+            place: "Freelance",
             description: [
-                "Delivered 10 targeted learning sessions for 20+ freshman students in D language and algorithmic fundamentals.",
-                "Created training materials to improve students' programming and problem-solving skills.",
-                "Provided personalized support to students in a collaborative learning environment."
+                "Conducted 50+ one-on-one instructional sessions on fundamental Python syntax and Scratch.",
+                "Covered 100+ coding problems and exercises across both Python and Scratch to build student programming proficiency.",
+                "Developed customized lesson plans to match student curriculum."
             ],
-            image: UNJ,
-            start: "October 2024",
-            end: "Desember 2024"
-        },
-        {
-            id: "OJS Maintainer",
-            title: "OJS Maintainer at Chemistry Department, UNJ",
-            place: "Chemistry Department, UNJ",
-            description: [
-                "Redesigned and maintained OJS platform interface, improving overall system performance and user experience.",
-                "Implemented security enhancements and regular maintenance to ensure platform stability and data protection.",
-                "Managed domain configuration and technical support, maintaining consistent website accessibility."
-            ],
-            image: OJS,
-            start: "October 2024",
-            end: "Desember 2024"
+            image: Teacher,
+            start: "April 2023",
+            end: "Present"
         },
         {
             id: "Full-stack Developer",
@@ -171,31 +158,44 @@ export default function Work() {
             end: "July 2025"
         },
         {
-            id: "Private Teacher",
-            title: "Private Teacher",
-            place: "Freelance",
+            id: "OJS Maintainer",
+            title: "OJS Maintainer at Chemistry Department, UNJ",
+            place: "Chemistry Department, UNJ",
             description: [
-                "Conducted 50+ one-on-one instructional sessions on fundamental Python syntax and Scratch.",
-                "Covered 100+ coding problems and exercises across both Python and Scratch to build student programming proficiency.",
-                "Developed customized lesson plans to match student curriculum."
+                "Redesigned and maintained OJS platform interface, improving overall system performance and user experience.",
+                "Implemented security enhancements and regular maintenance to ensure platform stability and data protection.",
+                "Managed domain configuration and technical support, maintaining consistent website accessibility."
             ],
-            image: Teacher,
-            start: "April 2023",
-            end: "Present"
+            image: OJS,
+            start: "October 2024",
+            end: "Desember 2024"
         },
         {
-            id: "Website Developer",
-            title: "Website Developer at PT Toffee International (ToffeeDev)",
-            place: "PT Toffee International (ToffeeDev)",
+            id: "Academic Assistant",
+            title: "Academic Assistant at Department of Computer Science, UNJ",
+            place: "Department of Computer Science, UNJ",
             description: [
-                "Engineered a 30+ page dashboard for 7 company divisions to improve data access",
-                "Managed and resolved technical issues for 20+ client websites, ensuring high performance",
-                "Executed technical SEO strategies to improve client search engine rankings",
-                "Developed and launched new website features, enhancing functionality and user engagement"
+                "Delivered 10 targeted learning sessions for 20+ freshman students in D language and algorithmic fundamentals.",
+                "Created training materials to improve students' programming and problem-solving skills.",
+                "Provided personalized support to students in a collaborative learning environment."
             ],
-            image: Toffee, 
-            start: "February 2025",
-            end: "Present"
+            image: UNJ,
+            start: "October 2024",
+            end: "Desember 2024"
+        },
+        {
+            id: "Backend Developer",
+            title: "Backend Developer at Angkit Agro Technology",
+            place: "Angkit Agro Technology",
+            description: [
+                "Designed and implemented a barcode generation and scanning system for livestock monitoring and tracking.",
+                "Developed and maintained 10+ RESTful APIs using Flask (Python).",
+                "Implemented data encryption protocols and security measures for sensitive livestock data.",
+                "Configured and optimized cloud infrastructure and Nginx servers for Flask deployment, achieving 99.9% uptime."
+            ],
+            image: Angkit,
+            start: "October 2023",
+            end: "February 2024"
         },
     ];
 
@@ -254,20 +254,20 @@ export default function Work() {
                     <h1 className="flex font-semibold text-[8vw] md:text-[8vh] text-white w-fit">Experiences</h1>
                 </div>
                 <section className="grid lg:grid-cols-4 w-[70vw] h-full text-white gap-16">
-    
+
                     {experienceContents.map((content) => (
                         <React.Fragment key={content.id}>
-                            <BoxWrapper 
-                                title={content.id} 
-                                company={content.place} 
-                                img={content.image} 
+                            <BoxWrapper
+                                title={content.id}
+                                company={content.place}
+                                img={content.image}
                                 setOpenModalId={setOpenModalId}
                             />
-                            
+
                             {openModalId === content.id && (
-                                <ModalWrapper 
-                                    content={content} 
-                                    onClose={() => setOpenModalId(null)} 
+                                <ModalWrapper
+                                    content={content}
+                                    onClose={() => setOpenModalId(null)}
                                 />
                             )}
                         </React.Fragment>
@@ -278,20 +278,20 @@ export default function Work() {
                     <h1 className="flex font-semibold text-[8vw] md:text-[8vh] text-white w-fit">Projects</h1>
                 </div>
                 <section className="grid lg:grid-cols-4 w-[70vw] h-full text-white gap-16">
-    
+
                     {projectContents.map((content) => (
                         <React.Fragment key={content.id}>
-                            <BoxWrapper 
-                                title={content.id} 
-                                company={content.place} 
-                                img={content.image} 
+                            <BoxWrapper
+                                title={content.id}
+                                company={content.place}
+                                img={content.image}
                                 setOpenModalId={setOpenModalId}
                             />
-                            
+
                             {openModalId === content.id && (
-                                <ModalWrapper 
-                                    content={content} 
-                                    onClose={() => setOpenModalId(null)} 
+                                <ModalWrapper
+                                    content={content}
+                                    onClose={() => setOpenModalId(null)}
                                 />
                             )}
                         </React.Fragment>
