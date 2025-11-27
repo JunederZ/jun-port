@@ -21,7 +21,7 @@ function ContactContent(props: { skill: string; img?: any, link?: string }) {
 
 export default function Contact() {
     const [showCopied, setShowCopied] = useState(false);
-    const email = 'arjunadimas000@gmail.com';
+    const email = 'contact@juned.dev';
 
     const copyToClipboard = async () => {
         try {

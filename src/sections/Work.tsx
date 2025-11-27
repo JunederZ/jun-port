@@ -6,6 +6,8 @@ import UNJ from "../assets/unj.png"
 import OJS from "../assets/ojs.png"
 import Nasa from "../assets/nasa.jpg"
 import Ampas from "../assets/ampas.png"
+import Toffee from "../assets/toffee.webp"
+import Nedmed from "../assets/nedmed.png"
 
 function BoxWrapper(props: {
     company: any; title: any; img: any; setOpenModalId: Function 
@@ -155,6 +157,20 @@ export default function Work() {
             end: "Desember 2024"
         },
         {
+            id: "Full-stack Developer",
+            title: "Full-stack Developer at Gakko Eduplatform",
+            place: "Gakko Eduplatform",
+            description: [
+                "Oversaw the technical strategy and implementation of a web platform connecting students with qualified tutors.",
+                "On boarded over 50 tutors to the platform, providing support to ensure high-quality instruction for students.",
+                "Developed the back-end API services using Python and the Django framework.",
+                "Built the front-end web application using React.js, implementing a modern, responsive UI and seamless user experiences."
+            ],
+            image: Gakko,
+            start: "August 2023",
+            end: "July 2025"
+        },
+        {
             id: "Private Teacher",
             title: "Private Teacher",
             place: "Freelance",
@@ -168,19 +184,19 @@ export default function Work() {
             end: "Present"
         },
         {
-            id: "Full-stack Developer",
-            title: "Full-stack Developer at Gakko Eduplatform",
-            place: "Gakko Eduplatform",
+            id: "Website Developer",
+            title: "Website Developer at PT Toffee International (ToffeeDev)",
+            place: "PT Toffee International (ToffeeDev)",
             description: [
-                "Oversaw the technical strategy and implementation of a web platform connecting students with qualified tutors.",
-                "On boarded over 50 tutors to the platform, providing support to ensure high-quality instruction for students.",
-                "Developed the back-end API services using Python and the Django framework.",
-                "Built the front-end web application using React.js, implementing a modern, responsive UI and seamless user experiences."
+                "Engineered a 30+ page dashboard for 7 company divisions to improve data access",
+                "Managed and resolved technical issues for 20+ client websites, ensuring high performance",
+                "Executed technical SEO strategies to improve client search engine rankings",
+                "Developed and launched new website features, enhancing functionality and user engagement"
             ],
-            image: Gakko,
-            start: "August 2023",
+            image: Toffee, 
+            start: "February 2025",
             end: "Present"
-        }
+        },
     ];
 
     const projectContents: ModalContent[] = [
@@ -212,6 +228,21 @@ export default function Work() {
             ],
             image: Ampas,
             start: "VPS, Proxy and Top-up System",
+            end: "none"
+        },
+        {
+            id: "NedMed",
+            title: "NedMed - Full-Stack Media Uploader",
+            place: "Personal Project",
+            description: [
+                "Developed a full-stack media uploader using Go, Svelte, and PostgreSQL.",
+                "Built a Go backend API to manage file uploads and a responsive Svelte frontend for user interaction.",
+                "Containerized the application with Docker for simplified, one-command deployment.",
+                "Implemented secure file handling and database management for efficient media storage."
+            ],
+            image: Nedmed, // You'll need to import and add the appropriate image
+            link: "https://github.com/JunederZ/NedMed",
+            start: "January 2025",
             end: "none"
         }
     ];
