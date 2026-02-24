@@ -9,7 +9,7 @@ export default function AboutMe() {
                 </div>
                 <div className="text-gray-200 flex items-center justify-center w-[60vw] text-center pt-8 md:text-[2vw] text-[5vw]">
                     <p>
-                    Hello! I'm Arjuna, and you can call me Ned. I'm a Computer Science student at State University of Jakarta who loves to code. I thrive on challenging projects and am always looking for opportunities to learn and grow.
+                    Hello! I'm Arjuna, but you can call me Ned. I am a passionate Full-Stack Software Engineer who thrives on challenging projects. I am constantly seeking opportunities to learn new technologies and grow as a developer.
                     </p>
                 </div>
             </div>
