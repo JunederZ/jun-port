@@ -18,6 +18,9 @@ import MongoDB from '../assets/skills/mongodb-original.svg'
 import MariaDB from '../assets/skills/mariadb-original.svg'
 import Git from '../assets/skills/git-original.svg'
 import Nginx from '../assets/skills/nginx-original.svg'
+import PHP from '../assets/skills/php-original.svg'
+import Svelte from '../assets/skills/svelte-original.svg'
+import Laravel from '../assets/skills/laravel-original.svg'
 
 
 
@@ -61,6 +64,9 @@ export default function Skills() {
                             { skill: 'Flask', img: Flask },
                             { skill: 'Flutter', img: Flutter },
                             { skill: 'Jetpack', img: Jetpack },
+                            { skill: 'PHP', img: PHP },
+                            { skill: 'Svelte', img: Svelte },
+                            { skill: 'Laravel', img: Laravel },
                         ].map((skill, index) => (
                             <li key={index}>
                                 <SkillBubble skill={skill.skill} img={skill.img} />
